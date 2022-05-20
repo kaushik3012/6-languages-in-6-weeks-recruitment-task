@@ -1,1 +1,1 @@
-# 6-languages-in-6-weeks-recruitment-task
+# 6 Languages In 6 Weeks Recruitment Task
