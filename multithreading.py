@@ -1,3 +1,4 @@
+import sys
 import threading
 import time
 import argparse
@@ -26,7 +27,7 @@ if __name__ == '__main__':
     
     global n    
     n=0            # Initialize the global variable
-    print("Initial Value of n: {}".format(n))   
+    print("\nInitial Value of n: {}".format(n))   
 
     thread_list = []        # List of threads
     no_Threads = args.th-1      # Number of threads
@@ -38,7 +39,7 @@ if __name__ == '__main__':
     if no_Threads == 0:     
 
         # If no. of threads is 0, then only one thread is created
-        print("No. of Active Threads: 1")  
+        print("\nNo. of Active Threads: ",threading.active_count())  
 
         # Loop until 1 second
         while(time.perf_counter() - start<1):   
@@ -55,12 +56,14 @@ if __name__ == '__main__':
         for thread in thread_list:  
             thread.start()  
                 
-        print("No. of Active Threads: ",threading.active_count())      # Prints the number of active threads
+        print("\nNo. of Active Threads: ",threading.active_count())      # Prints the number of active threads
 
         # Waits for all threads to complete
         for thread in thread_list:
             thread.join()       
 
     end = time.perf_counter()       # End time of the program
-    print("Final Value of n: ", n)      # Print the final value of n
-    print('Total time taken: {} second(s)'.format(round(end - start,2)))        # Print the total time taken
+    print("\nFinal Value of n: ", n)      # Print the final value of n
+    print("\nTotal time taken: {} second(s)".format(round(end - start,2)))        # Print the total time taken
+    input("\nPress Enter to Exit")
+    sys.exit()
