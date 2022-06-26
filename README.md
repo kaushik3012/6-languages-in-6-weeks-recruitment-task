@@ -1,5 +1,5 @@
 
-# 6 Languages In 6 Weeks Recruitment Task
+# Performance Tester Script
 
 This project is based on python programming language. 
 The program runs loops on different threads and increments 
